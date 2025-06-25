@@ -1,14 +1,14 @@
 :root {
-  --primary: #ff6b6b;
-  --secondary: #f7d794;
-  --dark-bg: #1e272e;
-  --card-bg: #2f3640;
-  --text-color: #f1f2f6;
-  --highlight: #34ace0;
-  --button-hover: #ff4757;
-  --border-radius: 12px;
+  --primary: #4ecca3;
+  --secondary: #393e46;
+  --dark-bg: #222831;
+  --card-bg: #31363f;
+  --text-color: #eeeeee;
+  --highlight: #00adb5;
+  --button-hover: #3ba78c;
+  --border-radius: 10px;
   --transition: 0.3s ease-in-out;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -25,8 +25,8 @@ body {
 
 /* Navbar */
 .navbar {
-  background: linear-gradient(90deg, #ff6b6b, #ff4757);
-  padding: 10px 20px;
+  background: var(--secondary);
+  padding: 12px 20px;
   box-shadow: var(--shadow);
   position: sticky;
   top: 0;
@@ -42,14 +42,14 @@ body {
 }
 
 .nav-logo {
-  font-size: 24px;
-  color: white;
-  text-decoration: none;
+  font-size: 22px;
   font-weight: bold;
+  color: var(--primary);
+  text-decoration: none;
 }
 
 .nav-link {
-  color: white;
+  color: var(--text-color);
   margin-left: 20px;
   text-decoration: none;
   font-size: 16px;
@@ -57,18 +57,18 @@ body {
 
 .nav-link:hover {
   text-decoration: underline;
-  color: #ffeaa7;
+  color: var(--highlight);
 }
 
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 /* Header */
 header {
-  background: linear-gradient(to right, #1e272e, #2f3542);
+  background: #2d3436;
   padding: 2rem 1rem;
   text-align: center;
   box-shadow: var(--shadow);
@@ -76,26 +76,27 @@ header {
 
 header h1 {
   margin-bottom: 1rem;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
+  color: var(--primary);
 }
 
 input[type="text"] {
-  padding: 10px;
-  width: 60%;
-  border-radius: 8px;
+  padding: 12px;
+  width: 55%;
+  border-radius: var(--border-radius);
   border: none;
   font-size: 16px;
   margin-right: 10px;
 }
 
 button {
-  padding: 10px 16px;
+  padding: 12px 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   background-color: var(--primary);
   color: white;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color var(--transition);
 }
@@ -104,7 +105,7 @@ button:hover {
   background-color: var(--button-hover);
 }
 
-/* Movie Layout */
+/* Layout */
 #results,
 #trending {
   display: grid;
@@ -112,6 +113,7 @@ button:hover {
   gap: 1.5rem;
   padding: 1.5rem;
 }
+
 
 /* Movie Cards */
 .movie-card {
@@ -123,8 +125,7 @@ button:hover {
 }
 
 .movie-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transform: translateY(-6px);
 }
 
 .movie-card img {
@@ -135,16 +136,18 @@ button:hover {
 
 .movie-info {
   padding: 10px;
+  text-align: center;
 }
 
 .movie-info h3 {
-  margin: 0.5rem 0 0.2rem;
+  margin: 0.4rem 0 0.2rem;
   font-size: 16px;
+  color: var(--text-color);
 }
 
 .movie-info p {
   font-size: 14px;
-  color: #dcdde1;
+  color: #bbb;
 }
 
 .fav-btn {
@@ -157,24 +160,24 @@ button:hover {
 }
 
 .fav-btn:hover {
-  transform: scale(1.3);
+  transform: scale(1.2);
 }
 
-/* Trending Section */
+/* Movie Section Titles */
 .movie-section {
   padding: 2rem 1.5rem;
 }
+
 .movie-section h2 {
   font-size: 1.6rem;
-  color: #f7d794;
+  color: var(--highlight);
   border-left: 6px solid var(--primary);
   padding-left: 12px;
   margin-bottom: 1.2rem;
   text-align: left;
 }
 
-
-/* Cast Section */
+/* Cast */
 .cast-list {
   display: flex;
   flex-wrap: wrap;
@@ -201,7 +204,7 @@ button:hover {
   border-radius: 8px;
 }
 
-/* Dark Mode Toggle */
+/* Dark Mode Switch */
 .switch {
   position: relative;
   display: inline-block;
@@ -218,7 +221,7 @@ button:hover {
 .slider {
   position: absolute;
   cursor: pointer;
-  background-color: #ccc;
+  background-color: #999;
   border-radius: 34px;
   top: 0;
   left: 0;
@@ -255,7 +258,7 @@ input:checked + .slider:before {
   }
 
   header h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   #results,
@@ -263,12 +266,14 @@ input:checked + .slider:before {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 }
+
+/* Hero Section */
 .hero {
   padding: 3rem 1rem;
-  background: linear-gradient(to right, #2f3542, #57606f);
+  background: linear-gradient(to right, #393e46, #222831);
   color: white;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  box-shadow: var(--shadow);
 }
 .hero h2 {
   font-size: 2rem;
@@ -278,6 +283,8 @@ input:checked + .slider:before {
   font-size: 1.1rem;
   color: #dcdde1;
 }
+
+/* Footer */
 .footer {
   background: #1c1c1c;
   color: #aaa;

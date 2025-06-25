@@ -12,8 +12,6 @@ async function searchMovies() {
   }
 
   localStorage.setItem("lastSearch", query);
-  document.getElementById("trending").style.display = "none";
-
   const results = await fetchMovies(query);
   renderMovies(results, "Search Results");
 }
